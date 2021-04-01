@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+
+.todo {
+display: flex;
+justify-content: space-between;
+width: 60%;
+padding: 1%;
+margin-top: 1%;
+margin-left: 15%;
+text-align: center;
+align-items: center;
+font-family: Lato, sans-serif;
+text-transform: uppercase;
+font-weight: bold;
+
+}
+
+.todo-status.is-♬STOP♬ {
+color: black;
+}
+
+.todo-status.is-♫PLAY♫ {
+   color: white;
+   font-weight: bold;
+}
+
+.todo.is-♬STOP♬ {
+    color: black;
+    border: rgb(0, 132, 255);
+    border-width: 20px;
+} 
+
+
+.todo.is-♫PLAY♫ {
+    --border-width: 3px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: Lato, sans-serif;
+    text-transform: uppercase;
+    border-radius: var(--border-width);
+} 
+    ::after {
+      position: absolute;
+      content: "";
+      top: calc(-1 * var(--border-width));
+      left: calc(-1 * var(--border-width));
+      z-index: -1;
+      width: calc(100% + var(--border-width) * 2);
+      height: calc(100% + var(--border-width) * 2);
+      background: linear-gradient(
+        60deg,
+        hsl(224, 85%, 66%),
+        hsl(269, 85%, 66%),
+        hsl(314, 85%, 66%),
+        hsl(359, 85%, 66%),
+        hsl(44, 85%, 66%),
+        hsl(89, 85%, 66%),
+        hsl(134, 85%, 66%),
+        hsl(179, 85%, 66%)
+      );
+      background-size: 300% 300%;
+      background-position: 0 50%;
+      border-radius: calc(2 * var(--border-width));
+      animation: moveGradient 4s alternate infinite;
+    }
+   
+  
+  @keyframes moveGradient {
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+
+.todo-name.is-♬STOP♬ {
+    color: black;
+    border: rgb(0, 132, 255);
+    border-width: 20px;
+} 
+    
+.todo-name.is-♫PLAY♫ {
+    border: rgb(0, 132, 255);
+    border-width: 20px;
+}
+/* <div class="todo-status is-status: ♬STOP♬">status: ♬STOP♬</div> */
